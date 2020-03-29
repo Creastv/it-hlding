@@ -1,0 +1,25 @@
+.header-single{
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    p{
+        background: #f8f8f8;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 30px;
+        /* color: #fff; */
+        margin-bottom: 010px;
+    }
+    &:before{
+        content:"";
+        display: block;
+        height: 100%;
+        width: 2px;
+        border-radius:2px;
+        background-color: $main;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+

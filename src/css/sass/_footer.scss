@@ -1,5 +1,190 @@
 #footer{
-    background:$main;
-    padding: 50px 15px;
-    margin-top: 30px;
+    background-color:#f8f8f8;
+    // padding-top: 150px;
+    padding: 150px 50px 30px;
+    @media #{$md}{
+        padding-top: 0px;
+    }
+    @media #{$xs}{
+        padding: 0px 0px 30px;
+    }
+    .info-footer{
+        img{
+            margin-bottom: 20px;
+        }
+        h3{
+            font-size: 21px;
+        }
+        p{
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+        span{
+            color:#949494;
+            p{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .widget_nav_menu{
+        margin-top: 30px;
+        h4{
+            font-size: 21px;
+            margin: 0 10px 0px;
+            padding-bottom: 10px;
+            color:#949494;
+            position: relative;
+            &:before{
+                content:"";
+                width: 5px;
+                height: 2px;
+                position: absolute;
+                background-color: $main;
+                left: -5px;
+                bottom: 0;
+            }
+            &:after{
+                content:"";
+                width: 15px;
+                height: 2px;
+                position: absolute;
+                background-color: $main;
+                left: 10px;
+                bottom: 0;
+            }
+        }
+        .menu{
+            margin-top: 10px;
+            list-style: none;
+            padding: 0px;
+            li{
+                a{
+                    color:$p;
+                    border:1px solid transparent;
+                    @include trans;
+                    padding:0px 10px;
+                    border-radius:100px;
+                    display:inline-block;
+                    margin-bottom: 5px;
+                    font-size: 14px;
+                    &:hover{
+                        color:$main;
+                        border:1px solid $main;
+                    }
+                    &:focus{
+                        color:#fff;
+                        border:1px solid $main;
+                        background-color: $main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.kontakt-footer{
+    width: 100%;
+    margin: 0 auto;
+    background: #8cc02a;
+    background-image: url(../img/itholding-kontakt.png);
+    
+    background-position: left!important;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: translate(0, -120%);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    @include shadow;
+    @media #{$md}{
+        background-size: cover;
+        position: inherit;
+        transform: translate(0,0);
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
+    .wraper{
+        background-image: url(../img/bg-header.png);
+        background-position: center!important;
+        background-size:cover;
+        background-repeat: no-repeat; 
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media #{$sm}{
+            display: block;
+            text-align: center;
+        }
+        i{
+            color:#fff;
+            font-size: 31px;
+            text-align: right;
+            margin-bottom: 0px;
+            @media #{$md}{
+                font-size: 21px;
+            }
+            @media #{$sm}{
+                font-size: 14px;
+            }
+        }
+        div{
+            border-left:1px solid #fff;
+            margin-left: 15px;
+            padding-left: 15px;
+            text-align: center;
+            padding: 0 15px;
+            @media #{$sm}{
+                border:none;
+                margin: 0;
+                padding:0;
+            }
+            .tel{
+                font-size: 51px;
+                color:#fff;
+                font-weight: 700;
+                @media #{$xs} {
+                    font-size: 31px;
+                    margin: 20px 0px;
+                }
+            }
+            .btn{
+                width: 300px;
+                @media #{$xs}{
+                    width: inherit;
+                    margin-top: 15px;
+                   
+                }
+
+            }
+            a{
+
+               
+            }
+
+        }
+    }
+}
+
+#info{
+    p{
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+#info-nav{
+    ul{
+        padding: 0;
+        margin: 0 0;
+        list-style: none;
+        li{
+            display: inline-block;
+            a{
+                font-size: 12px;
+                padding: 5px;
+                color:$p;
+            }
+        }
+    }
 }

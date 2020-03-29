@@ -1,4 +1,9 @@
 <?php get_header(); ?>
-    <article class="col-xs-12 col-sm-8 col-md-8 col-lg-8"></article>
-    <aside  class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></aside>
+    <article class="col-md-12">
+        <?php if (have_posts()) :
+            while ( have_posts() ) : the_post(); ?>
+            <?php the_content(); ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </article>
 <?php get_footer(); ?>

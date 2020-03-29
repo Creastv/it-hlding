@@ -1,0 +1,44 @@
+.widget{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.widget_nav_menu{
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            display: inline-block;
+            a{
+                margin:5px;
+                display: block;
+                padding: 10px;
+                border-radius:10px;
+                border:1px solid $main;
+                color:$main;
+                &:hover{
+                    background:$main;
+                    color:#fff;
+                    @include shadow;     
+                }
+                &:focus{
+                    background:darken($main, 5%);
+                    color:#fff;
+                    @include shadow;     
+                    outline: 0;
+                    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                }
+
+            }
+        }
+    }
+}
+
+.single-post{
+    .stick-to-top{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+    }
+}

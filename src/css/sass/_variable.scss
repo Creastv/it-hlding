@@ -1,8 +1,14 @@
-$xs: "only screen and (max-width: 48em)";
-$sm: "only screen and (max-width: 64em)";
-$md: "only screen and (max-width: 75em)";
-// $md: "only screen and (max-width: 1200px)";
-// $lg: "only screen and (max-width: 1400px)";
+$xxxs: "only screen and (max-width: 320px)";
 
-$main: #e8e8e8;
-$main2: #009cb9;
+$xxs: "only screen and (max-width: 568px)";
+$xs: "only screen and (max-width: 768px)";
+$sm: "only screen and (max-width: 992px)";
+$md: "only screen and (max-width: 1200px)";
+$lg2: "only screen and (max-width: 1300px)";
+$lg: "only screen and (max-width: 1400px)";
+
+
+$main: #8cc02a;
+$black: #231f20;
+$gray: #b5b5b5;
+$p: #525252;
