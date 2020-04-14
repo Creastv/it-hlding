@@ -7,8 +7,9 @@ get_header(); ?>
 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
     <?php if (have_posts()) :
         while ( have_posts() ) : the_post(); ?>
+        <div class="content-page">
            <?php the_content(); ?>
-           dfghdfsgh
+        </div>
         <?php endwhile; ?>
     <?php endif; ?>
 </article>

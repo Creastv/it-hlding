@@ -1,0 +1,22 @@
+.slownik-content{
+    p, li{
+        font-size: 21px;
+
+    }
+}
+
+.all-sl{
+    padding: 30px 0;
+    ul{
+        list-style: none;
+        // padding: 30px 0;
+        padding: 0;
+        li{
+            display: inline-block;
+            a{
+                margin: 10px;
+            }
+        }
+    }
+}
+.tagcloud li:nth-child(9n) a{font-size: 14px;} .tagcloud li:nth-child(9n+1) a{font-size: 18px;} .tagcloud li:nth-child(9n+2) a{font-size: 20px;} .tagcloud li:nth-child(9n+3) a{font-size: 16px;} .tagcloud li:nth-child(9n+4) a{font-size: 24px;} .tagcloud li:nth-child(9n+5) a{font-size: 16px;} 

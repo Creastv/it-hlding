@@ -13,15 +13,11 @@
         @include trans;
         margin:15px 0px;
         height:200px;
-        &:hover{
-            // @include strong-shadow;
-            // transform: scale(1.03);
-        }
     }
     .content{
         width: 90%;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
-        padding: 15px;
+        @include trans;
+        @include shadow
         padding: 20px;
         margin: 0 auto;
         margin-top: -50px;
@@ -32,6 +28,26 @@
         h2{
             font-size: 21px;
             color:$black;
+            @media #{$lg}{
+                font-size: 18px;
+            }
+        }
+        .pub-tim{
+            font-size: 12px;
+            margin: 5px 0;
+
+        }
+        .zaj{
+            p{
+                font-size: 14px;
+            }
         }
     }
+}
+
+.content-post a:hover > .box-post {
+    @include shadow;
+}
+.content-post a:hover .content {
+    @include shadowHover;
 }

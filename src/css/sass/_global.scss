@@ -1,3 +1,13 @@
+.wp-block { 
+    max-width: 100%; 
+    #bg-pakiety{
+        transform: translate(0,0);
+    }
+    .pakiety .pakiet header h4{
+        padding: 0px;
+        margin:0px;
+    }
+}
 body{
     padding:0;
     margin: 0;
@@ -20,6 +30,16 @@ a{
     }
 }
 
+
+.section-title{
+    span{
+        font-size: 21px;
+        color:#5d5d5d;
+    }
+    h2{
+        font-size: 41px;
+    }
+}
 
 .sline{
     width: 98px;
@@ -50,12 +70,18 @@ a{
 
 }
 
+
+
 .center-sline{
     margin: 20px auto;
 }
 .margin-sline-20{
     margin-top:20px;
     margin-bottom: 20px;
+}
+.margin-sline-10{
+    margin-top:10px;
+    margin-bottom: 10px;
 }
 .maincolor-sline{
     &:before{
@@ -67,17 +93,20 @@ a{
     }
 }
 
-
-
-
-
 ::-moz-selection { background:$main; }
 ::selection { background:$main; }
 .container{
     max-width: 1400px;
+    @media #{$lg}{
+        max-width: 1140px;
+
+    }
 }
 #breadcrumbs{
     margin-bottom: 15px;
+    @media #{$sm}{
+        margin-top: 15px;
+    }
     font-size: 12px;
     color:$p;
     font-weight: 300;
@@ -95,6 +124,12 @@ a{
     background: rgb(0,115,212);
     background: linear-gradient(38deg, rgba(0,115,212,1) 0%, rgba(0,168,255,1) 100%);
     @include shadow;
+    &:hover{
+        @include shadowHover;
+    }
+    &:focus{
+        @include shadowFocus;
+    }
 }
 
 .btn-big{
@@ -108,6 +143,7 @@ a{
     border:1px solid  rgb(0,115,212);
     box-shadow: none;
 }
+
 .scrollToTop{
     position: fixed;
     z-index: 999999999999;
@@ -136,3 +172,49 @@ a{
     bottom: 10px;
     right: 10px;
 }
+
+
+
+.fade-up-it{
+    -webkit-transition: all 0.7s 0s ease;
+    -moz-transition: all 0.7s 0s ease;
+    -o-transition: all 0.7s 0s ease;
+    transition: all 0.7s 0s ease;
+    opacity: 1;
+    
+}
+
+#cookie-notice{
+    background-color: $main2;
+    width: 300px;
+    min-width: 400px;
+    right: 60px;
+    left: inherit;
+    bottom: 10px;
+    @include shadow;
+    @media #{$sm}{
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+    img{
+        margin-right: 10px;
+        width: 20px;
+        
+    }
+}
+#cn-notice-buttons{
+    display: block;
+}
+.kk-star-ratings.kksr-valign-bottom{
+    margin-bottom: 50px;
+    display: block!important;
+    text-align: center;
+    // kksr-icon
+    .kksr-stars{
+        display: inline-block;
+        margin: 30px 0px;
+    }
+}
+.kksr-stars-inactive{}
+.kksr-stars-active{}

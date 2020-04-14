@@ -1,0 +1,62 @@
+.spistresci{
+    h1, h2, h3, h4, h5, h6 {
+        &:before{
+            display:none!important;
+        }
+        &:after{
+            display:none!important;
+        }
+    }
+    p{
+        font-size: 21px;
+        font-weight: 700;
+    }
+    background-color: #f8f8f8;
+    border: 1px solid #5252522e;
+    // display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    ul, ol{
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        @media #{$xs} {
+            columns: 1;
+            -webkit-columns: 1;
+            -moz-columns: 1;
+        }
+        li{
+            font-size: 14px;
+            color: #212529;
+            padding: 2px 10px;
+            line-height: 1;
+            margin-bottom: 10px;
+
+        }
+    }
+}
+.anchorSpis{
+    bottom: -100px;
+    background: #8cc029;
+    position: fixed;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    @include shadow;
+    @include trans2;
+    &:hover{
+        color:#fff;
+        background:darken($main, 10%);
+    }
+    &:focus{
+        color:#fff;
+        background:darken($main, 15%);
+    }
+}
+.anchorSpis.sticky{
+    @include trans2;
+    bottom:0px;
+    z-index: 20000;
+}

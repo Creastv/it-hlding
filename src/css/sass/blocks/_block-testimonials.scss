@@ -1,0 +1,53 @@
+.testimonial-it{
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    h1, h2, h3, h4, h5, h6 {
+        &:before{
+            display:none!important;
+        }
+        &:after{
+            display:none!important;
+        }
+    }
+    .swiper-testimonial{
+        background-image: url(../img/cytat.png);
+        background-position: right top;
+        background-repeat: no-repeat;
+    }
+    .content{
+        .inf{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            .logo{
+                img{
+                   padding: 10px;
+                   max-width: 100px;
+                }
+            }
+            .adres{
+                padding: 10px;
+                h3{
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                span{
+                    font-size: 16px;
+                }
+            }
+        }
+        .opis{
+            padding: 10px;
+            p{
+                font-size: 21px;
+                    font-weight: 700;
+                i{
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

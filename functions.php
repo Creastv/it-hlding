@@ -71,6 +71,14 @@ function cr_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Słównik', 'cr' ),
+		'id'            => 'sidebar-6',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4> <span class="sline maincolor-sline margin-sline-20"></span>',
+	) );
 }
 add_action( 'widgets_init', 'cr_widgets_init' );
 /**
@@ -83,7 +91,11 @@ function cr_scripts() {
 	wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.css' ); 
 	// Google fonts
 	wp_enqueue_style( 'cr_fonts_Raleway', 'https://fonts.googleapis.com/css?family=Asap:400,700&display=swap&subset=latin-ext' );
-	
+    if ( is_single()){
+		// Awsomefonts
+		wp_enqueue_style( 'cr_awsomefonts', get_template_directory_uri().'/src/css/awsomefonts.min.css' );
+	}
+
 	wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', false, NULL, true );
 	wp_enqueue_script( 'jquery' );
@@ -91,7 +103,7 @@ function cr_scripts() {
 	// bootstrap js
 	wp_enqueue_script('cr_bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array( 'jquery' ),'2', true );
 	if ( is_page_template('templates/home.php')){
-		wp_enqueue_style( 'cr_svipeer_css', 'https://unpkg.com/swiper/css/swiper.min.css' ); 
+		wp_enqueue_style( 'cr_svipeer_css', get_template_directory_uri().'/src/css/swiper.min.css' ); 
 		wp_enqueue_script('cr_swiper_js', 'https://unpkg.com/swiper/js/swiper.min.js', array( ),'5', true );
 		wp_enqueue_script('cr_swiper_action-home', get_template_directory_uri().'/src/js/home-script.js', array(),'10', true );
 	}
@@ -102,14 +114,33 @@ function cr_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cr_scripts' );
 
+// gutenberg editor
+
+function add_block_editor_assets(){
+  wp_enqueue_style('block_editor_css', get_template_directory_uri().'/src/css/main.css');
+}
+add_action('enqueue_block_editor_assets','add_block_editor_assets',10,0);
 
 
 /**
 * wordpress nav walker
 */
 require get_template_directory() . '/src/wp-nav.php';
-require get_template_directory() . '/src/schema-organization.php';
-require get_template_directory() . '/src/schema-localbusiness.php';
+require get_template_directory() . '/blocks/blocks.php';
+
+
+if (!function_exists('theme_php_include_setup')) {
+	function theme_php_include_setup() {
+		if ( is_page_template( array('templates/oferta.php') )){
+			require get_template_directory() . '/src/schema-localbusiness.php';
+		} else {
+			require get_template_directory() . '/src/schema-organization.php';
+ 		}
+    }
+}
+ // apply conditions at appropriate WP action 
+ add_action('wp', 'theme_php_include_setup');
+
 
 /**
 * Fukcja usuwa comunicaty o update
@@ -231,3 +262,44 @@ EOT;
     return $html;
 }
 add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
+
+
+// Slownik
+
+// Slownik
+function cr_slownik_post_types() {
+
+	$labels = array(
+		'name'               => 'Słownik',
+		'singular_name'      => 'Słownik',
+		'menu_name'          => 'Słownik',
+		'name_admin_bar'     => 'Słownik',
+		'add_new'            => 'Dodaj',
+		'add_new_item'       => 'Dodaj słowo',
+		'new_item'           => 'Nowe słowo',
+		'edit_item'          => 'Edytuj słowo',
+		'view_item'          => 'Zobacz',
+		'all_items'          => 'Wszyscy słowa',
+		'search_items'       => 'Szukaj słowa',
+		'parent_item_colon'  => 'Parent :',
+		'not_found'          => 'słowo not found.',
+		'not_found_in_trash' => 'słowo not found'
+	);
+	$args = array( 
+			 'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'hierarchical'      => true,
+		'menu_icon'     => 'dashicons-businessman',
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'publicly_queryable' => true,
+		'rewrite'           => array( 'slug' => 'slownik' ),
+		'supports'      => array( 'title', 'page-attributes', 'editor' )
+	);
+    	register_post_type( 'slownik', $args );
+
+}
+add_action( 'init', 'cr_slownik_post_types' );

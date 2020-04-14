@@ -1,0 +1,98 @@
+.onas{
+    padding: 60px 0px;
+    h1, h2, h3, h4, h5, h6 {
+        padding-bottom: 0!important;
+        &:before{
+            display:none!important;
+        }
+        &:after{
+            display:none!important;
+        }
+    }
+    .kv-content{
+        padding: 10px;
+        @media #{$xs}{
+            text-align: center;
+            padding: 0;
+        }
+        .img{
+            position: absolute;
+            top: -127px;
+            left: -80px;
+            z-index: -1;
+        }
+        h3{
+            font-size: 55px;
+            color:#989898;
+            font-weight: 300;
+            margin-bottom: 20px;
+            
+            @media #{$lg}{
+                font-size: 41px;
+            }
+            @media #{$xxs}{
+                font-size: 31px;
+            }
+            b{
+                font-size: 100px;
+                color:$black;
+                font-weight: 700;
+                @media #{$lg}{
+                    font-size: 81px;
+                }
+                @media #{$xxs}{
+                    font-size: 71px;
+                }
+            }
+        }
+        .btn-box{
+            @include shadow;
+            @include trans;
+            top: 50%;
+            background: #fff;
+            padding: 20px 70px 20px 15px;
+            position: relative;
+            border-radius:10px;
+            display: inline-block;
+            color:$black;
+            margin-bottom: 20px;
+            &:hover{
+                @include shadowHover;
+            }
+            &:focus{
+                @include shadowFocus;
+            }
+            span{
+                color:#989898;
+                font-size: 12px;
+                display: block;
+            }
+            img{
+                position: absolute;
+                top: 50%;
+                transform: translate(20px, -50%);
+            }
+        }
+    }
+    .content{
+        .bullet{
+            display: flex;
+            .img{
+                padding-left: 10px;
+                padding-right: 15px;
+                @media #{$xs} {
+                    padding-left: 0;
+                }
+            }
+            .desc{
+                    margin-bottom: 30px;
+                h3{
+                    font-size: 28px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

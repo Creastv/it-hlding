@@ -1,0 +1,165 @@
+#bg-pakiety{
+    position: absolute;
+    transform: translate(0, -120px);
+    @media #{$md}{
+        display: none;
+    }
+}
+.nw{
+    transform: scale(1.1);
+    position: relative;
+    z-index: 2;
+    @media #{$xs}{
+        transform: scale(1);
+    }
+}
+.de{
+    background: rgb(148,226,30);
+    background: linear-gradient(60deg, rgba(148,226,30,1) 0%, rgba(140,192,41,1) 65%);
+    ul{
+        li{
+            color:#fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+        }
+    }
+}
+
+
+.pakiety{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media #{$lg}{
+        padding-top: 30px;
+    }
+    @media #{$xs}{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        &:before{
+            display:none!important;
+        }
+        &:after{
+            display:none!important;
+        }
+    }
+    .section-title{
+        padding-bottom: 60px;
+        @media #{$xs}{
+            padding-bottom: 20px;
+        }
+    }
+    .pakiet{
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        @include shadow;
+        header{
+            text-align: center;
+            padding: 10px;
+            background: rgb(148,226,30);
+            background: rgb(148,226,30);
+            background: linear-gradient(60deg, rgba(148,226,30,1) 0%, rgba(140,192,41,1) 65%);
+            border-bottom: 1px solid darken($main, 10%);
+            @media #{$xs}{
+                text-align: left;
+            }
+            .tab{
+                @media #{$xs}{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                }
+                span{
+                    background: #0076d7;
+                    padding: 1px 5px 1px 10px;
+                    text-align: right;
+                    color: #fff;
+                    border-bottom-left-radius: 5px;
+                    border-top-left-radius: 5px;
+                    position: absolute;
+                    right: 0;
+                    top: 10px;
+                    font-size: 12px;
+                    font-weight: 700;
+                    @media #{$xs}{
+                        left:0px;
+                        right: inherit;
+                        border-bottom-left-radius: 0px;
+                        border-top-left-radius: 0px;
+                        border-bottom-right-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+                }
+                h3{
+                    color:#fff;
+                    font-size: 21px;
+                    font-weight: 100;
+                }
+                .display{
+                    display: none;
+                    @media #{$xs}{
+                        display: block;
+                    }
+                }
+            }
+            h4{
+                font-size: 41px;
+                color:$main;
+                font-weight: 700;
+                color:$main2;
+                @media #{$xs}{
+                    overflow: hidden;
+                    height: 0;
+                }
+                span{
+                    font-size: 31px;
+                    font-weight: 400;
+                }
+            }
+        }
+        ul{
+            text-align: center;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 0px;
+            li{
+                padding: 10px;
+                border-bottom: 1px solid rgba(227, 227, 227, 0.3);
+                font-size: 14px;
+            }
+        }
+        footer{
+            padding: 20px;
+            .btn{
+                display: block;
+            }
+        }
+        .content{
+            @media #{$xs}{
+                height: 0;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+
+
+.show{
+      .content{
+          height: inherit!important;
+      } 
+      h4{
+        height: inherit!important;
+      }
+      .display{
+          transform: rotate(90deg);
+      }
+}
+.nw{
+    header{
+        padding-top: 30px!important;
+    }
+}

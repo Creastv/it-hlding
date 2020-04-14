@@ -121,6 +121,9 @@
             font-size: 31px;
             text-align: right;
             margin-bottom: 0px;
+            @media #{$lg}{
+                font-size: 24px;
+            }
             @media #{$md}{
                 font-size: 21px;
             }

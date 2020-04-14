@@ -3,7 +3,7 @@
     margin-bottom: 30px;
 }
 
-.widget_nav_menu{
+.sidebar .widget_nav_menu{
     ul{
         list-style: none;
         padding: 0;
@@ -12,7 +12,7 @@
             a{
                 margin:5px;
                 display: block;
-                padding: 10px;
+                padding: 5px;
                 border-radius:10px;
                 border:1px solid $main;
                 color:$main;

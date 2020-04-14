@@ -43,23 +43,22 @@
 						<?php if (is_page_template('templates/home.php')) { ?>
 						<?php } elseif (is_page_template('templates/inwestycja.php')) { ?>	
 						<?php } elseif (is_page_template('templates/left-column-about.php')) { ?>
-							<div class="col-md-12">
+							
 							<h2 class="page-title" title="<?php the_title(); ?>">
 						<?php } elseif (is_single()) { ?>
-							<div class="col-md-12">
+							
 							<h2 class="page-title" title="<?php the_title(); ?>">
 						<?php } else {?>
-							<div class="col-md-12">
+							
 							<h1 class="page-title" title="<?php the_title(); ?>">
 						<?php } ?>
 						<?php
 							if ( is_category() ) :
 								single_cat_title();
-
-							elseif (is_page_template('templates/left-column-about.php')) :
-                                _e( 'O firmie', 'cr' );
-							elseif (is_page_template('templates/inwestycja.php')) :   
-							elseif (is_page_template('templates/home.php')) :   	 
+								
+							elseif (is_page_template('templates/home.php')) :
+							elseif ($post->post_type == 'slownik') :
+									printf( 'Słownik', 'cr');
 							elseif (is_single()) :
 								printf( 'Blog', 'cr');
 
@@ -69,8 +68,7 @@
 							elseif ( is_tag() ) :
 								single_tag_title();
 
-							elseif ($post->post_type == 'marcas') :
-								printf( 'Nuestras marcas', 'cr');
+							
 
 
 							elseif ( is_author() ) :
@@ -112,11 +110,11 @@
 					<?php } elseif (is_page_template('templates/left-column-about.php')) { ?>
 						</h2>
 						<span class="sline"></span>
-						</div>
+						<
 					<?php } else {?>
 						</h1>
 						<span class="sline"></span>
-						</div>
+						
 					<?php } ?>
 					
 					</div>

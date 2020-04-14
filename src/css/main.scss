@@ -2,10 +2,12 @@
 @import "sass/_variable.scss";
 @import "sass/_mixins.scss";
 @import "sass/_typography.scss";
+@import "sass/_img.scss";
 @import "sass/_forms.scss";
 @import "sass/_global.scss";
 @import "sass/_hamburger.scss";
 @import "sass/_sidebar.scss";
+@import "sass/_slownik.scss";
 
 @import "sass/_header.scss";
 @import "sass/_content-post.scss";
@@ -16,3 +18,16 @@
 @import "sass/_search.scss";
 @import "sass/_archive.scss";
 @import "sass/_404.scss";
+
+
+
+@import "sass/blocks/_block-tekst-block-right.scss";
+@import "sass/blocks/_block-testimonials.scss";
+@import "sass/blocks/_block-o-nas.scss";
+@import "sass/blocks/_block-klienci.scss";
+@import "sass/blocks/_block-mockup.scss";
+@import "sass/blocks/_block-pakiety.scss";
+@import "sass/blocks/_block-spistresci.scss";
+@import "sass/blocks/_block-table.scss";
+@import "sass/blocks/_blocks.scss";
+@import "sass/blocks/_block-accordion.scss";

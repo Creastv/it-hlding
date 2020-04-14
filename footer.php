@@ -85,7 +85,7 @@
         </div>
         <div class="col-6 col-sm-6 col-md-3 col-lg-2">
           <?php do_action( 'before_sidebar' ); ?>
-              <?php if ( ! dynamic_sidebar( 'sidebar-4' ) ) : ?>
+              <?php if ( ! dynamic_sidebar( 'sidebar-5' ) ) : ?>
           <?php endif; ?>
         </div>
         <div class="col-md-12">

@@ -4,7 +4,10 @@
         <div class="content">
             <h2><?php the_title(); ?></h2>
             <div class="pub-tim">
-                <?php the_date(); ?>
+               <?php the_time('F jS, Y'); ?>
+            </div>
+            <div class="zaj">
+               <?php the_excerpt(); ?>
             </div>
         </div>
     </a>
