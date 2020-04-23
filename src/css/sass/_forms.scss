@@ -9,6 +9,9 @@
 }
 .page-template-kontakt #wpcf7-f292-o1{
     margin-top: -120px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
     @media #{$sm} {
         margin-top: 0px;
     }

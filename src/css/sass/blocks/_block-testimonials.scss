@@ -1,3 +1,14 @@
+#border-top-testymonial{
+}
+.testimonial-wraper{
+    .section-title{
+        transform: translate(0, 65px);
+        @media #{$lg2}{
+            transform: translate(0, 0px);
+        }
+    }
+}
+
 .testimonial-it{
     background-color: #f8f8f8;
     padding: 20px 0;

@@ -103,6 +103,9 @@
       ul{
         align-items: center;
         li{
+          @media #{$sm}{
+            margin: 10px 0px;
+          }
           a{
             color:$black;
             font-size: 14px;

@@ -104,7 +104,7 @@ function cr_scripts() {
 	wp_enqueue_script('cr_bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array( 'jquery' ),'2', true );
 	if ( is_page_template('templates/home.php')){
 		wp_enqueue_style( 'cr_svipeer_css', get_template_directory_uri().'/src/css/swiper.min.css' ); 
-		wp_enqueue_script('cr_swiper_js', 'https://unpkg.com/swiper/js/swiper.min.js', array( ),'5', true );
+		wp_enqueue_script('cr_swiper_js', get_template_directory_uri().'/src/js/swiper.min.js', array( ),'5', true );
 		wp_enqueue_script('cr_swiper_action-home', get_template_directory_uri().'/src/js/home-script.js', array(),'10', true );
 	}
 
@@ -233,23 +233,41 @@ add_filter( 'nav_menu_item_id', 'remove_css_id_filter', 100, 1);
 add_filter( 'nav_menu_css_class', 'remove_css_id_filter', 100, 1);
 
 
-// add_action( 'init', function() {
+add_action( 'init', function() {
 
-//     // Remove the REST API endpoint.
-//     remove_action('rest_api_init', 'wp_oembed_register_route');
+    // Remove the REST API endpoint.
+    remove_action('rest_api_init', 'wp_oembed_register_route');
 
-//     // Turn off oEmbed auto discovery.
-//     // Don't filter oEmbed results.
-//     remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+    // Turn off oEmbed auto discovery.
+    // Don't filter oEmbed results.
+    remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
 
-//     // Remove oEmbed discovery links.
-//     remove_action('wp_head', 'wp_oembed_add_discovery_links');
+    // Remove oEmbed discovery links.
+    remove_action('wp_head', 'wp_oembed_add_discovery_links');
 
-//     // Remove oEmbed-specific JavaScript from the front-end and back-end.
-//     remove_action('wp_head', 'wp_oembed_add_host_js');
-// }, PHP_INT_MAX - 1 );
+    // Remove oEmbed-specific JavaScript from the front-end and back-end.
+    remove_action('wp_head', 'wp_oembed_add_host_js');
+}, PHP_INT_MAX - 1 );
+
+function itsme_disable_feed() {
+	wp_redirect( home_url() );
+    die;
+   }
+   
+   add_action('do_feed', 'itsme_disable_feed', 1);
+   add_action('do_feed_rdf', 'itsme_disable_feed', 1);
+   add_action('do_feed_rss', 'itsme_disable_feed', 1);
+   add_action('do_feed_rss2', 'itsme_disable_feed', 1);
+   add_action('do_feed_atom', 'itsme_disable_feed', 1);
+   add_action('do_feed_rss2_comments', 'itsme_disable_feed', 1);
+   add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);
+
+   remove_action( 'wp_head', 'feed_links_extra', 3 );
+   remove_action( 'wp_head', 'feed_links', 2 );
+   
 
 
+if( !current_user_can( 'administrator' ) ){
 
 function add_rel_preload($html, $handle, $href, $media) {
     
@@ -263,6 +281,7 @@ EOT;
 }
 add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
 
+};
 
 // Slownik
 

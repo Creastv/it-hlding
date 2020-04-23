@@ -27,3 +27,12 @@
         </div>
     </div>
 </section>
+<?php
+$padding_zdjecia = get_field('padding_zdjecia');
+if( $padding_zdjecia ): ?>
+<style type="text/css">
+.content-box-lp .kv {
+        padding: <?php echo $padding_zdjecia; ?>px;
+    }
+</style>
+<?php endif; ?>

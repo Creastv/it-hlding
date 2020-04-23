@@ -21,7 +21,6 @@ get_header(); ?>
        <div id="mapa-it"></div>
     </div>
 </div>
-
 <?php get_footer(); ?>
 
 <script>
@@ -37,7 +36,7 @@ function initMap() {
   var marker = new google.maps.Marker({
     position: uluru,
     map: map,
-    title: 'ItHolding Warszawa',
+    title: 'IT Holding Warszawa',
     icon:'<?php echo get_template_directory_uri(); ?>/src/img/pin.png',
   });
 }

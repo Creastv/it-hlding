@@ -6,6 +6,8 @@ add_action('wp_head', function() {
         'name'      => get_field('legal_name', 'option'),
         'url'       => get_field('url', 'option'),
         'telephone'       => get_field('glowny_telefon', 'option'),
+        "hasMap"=> get_field('hasmap', 'option'),
+        "priceRange" => get_field('price', 'option'),
 		'address'   => array(
             '@type'           => 'PostalAddress',
             'streetAddress'   => get_field('streetAddress', 'option'),

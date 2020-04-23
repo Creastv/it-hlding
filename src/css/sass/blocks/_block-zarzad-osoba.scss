@@ -1,0 +1,76 @@
+.zarzad-osoby{
+    padding-bottom: 40px;
+    .osoby{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .osoba{
+            margin: 20px;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            // flex-wrap: wrap;
+            .zdjecie{
+                position: relative;
+                // padding: 20px;
+                margin-right: 15px;
+                @media #{$xs}{
+                    max-width: 40%;
+                }
+                &:before{
+                    content: "";
+                    background-image: url(../img/bg-img-lp.png);
+                    width: 100%;
+                    height: 80%;
+                    display: block;
+                    position: absolute;
+                    z-index: -1;
+                    right: -30px;
+                    top: -10px;
+                    // padding: 30px;
+                    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                }
+                &:after{
+                    content: "";
+                    // background-image: url(../img/bg-img-lp.png);
+                   background-color: #edf5de;
+                    width: 100%;
+                    height: 80%;
+                    display: block;
+                    position: absolute;
+                    z-index: -1;
+                    left: 0px;
+                    bottom: 0;
+                    // padding: 30px;
+                    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                }
+                img{
+                   width: 300px;
+                   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                   @media #{$md}{
+                    width: 150px;
+                  }
+                   @media #{$sm}{
+                       width: 100px;
+                   }
+                }
+            }
+            .dane{
+                padding:20px;
+                span{
+                    background: #f8f8f8;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                    font-size: 12px;
+                }
+                a{
+                    display: block;
+                }
+            }
+        }
+    }
+}

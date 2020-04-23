@@ -1,0 +1,44 @@
+.kontakt-adres{
+    // @include shadow;
+    border-radius: 20px;
+    margin: 20px 0px;
+    overflow: hidden;
+    .wraper{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        // flex-wrap: wrap;
+        background-size: cover;
+        background-position: center;
+        @media #{$xs}{
+            flex-wrap: wrap;
+        }
+        address{
+            width: 50%;
+            padding: 20px 30px;
+            background-color: #f9f9f9;
+            margin: 0;
+            @media #{$xs}{
+                width: 100%;
+            }
+            h3{
+                font-size: 21px;
+            }
+            p{
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .buttons{
+            width: 100%;
+            text-align: center;
+            @media #{$xs}{
+                padding: 30px 15px;
+            }
+            a{
+                margin: 10px;
+            }
+        }
+    }
+    
+}

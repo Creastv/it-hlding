@@ -12,10 +12,11 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <div id="preloader">
+		<img class="img-fade" src="<?php echo get_template_directory_uri(); ?>/src/img/it-holding.png" alt="<?php wp_title( '|', true, 'right' ); ?>"></a>
+	</div>
 	<?php if (is_page_template('templates/home.php')) : ?>
-		<div id="preloader">
-				<img class="img-fade" src="<?php echo get_template_directory_uri(); ?>/src/img/it-holding.png" alt="<?php wp_title( '|', true, 'right' ); ?>"></a>
-		</div>
+		
 		<header id="header" class="header-home" itemscope itemtype="http://schema.org/WPHeader" >
 			<?php get_template_part( 'templates/header-nav', get_post_format() ); ?>
 		</header>

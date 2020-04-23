@@ -41,7 +41,7 @@
                                     <?php while ( have_rows('lista') ) : the_row(); ?>
                                     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer" >
                                         <div itemprop="itemOffered" itemscope itemtype="http://schema.org/Service">
-                                        <span itemprop="name"> <img src="<?php echo get_template_directory_uri(); ?>/src/img/tick.png" alt="<?php  the_sub_field('li'); ?>"> <?php  the_sub_field('li'); ?></span>
+                                        <span itemprop="name"> <?php  the_sub_field('li'); ?></span>
                                         </div>
                                     </li>
                                     <?php endwhile; ?>

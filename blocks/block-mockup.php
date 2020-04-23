@@ -54,9 +54,10 @@
             </div>
             <div class="col-md-4">
                 <div id="mock" class="mock text-center">
-                    <img class="img-fluid " src="<?php echo get_template_directory_uri(); ?>/src/img/mockup.png" alt="">
-                    <img class="img-fluid zas" src="<?php echo get_template_directory_uri(); ?>/src/img/search-google.jpg" alt="">
+                    <img class="img-fluid " src="<?php echo get_template_directory_uri(); ?>/src/img/search-google2-2.gif" alt="">
+                            
                 </div>
+                
             </div>
             <div class="col-md-4">
                 <?php if( have_rows('bullets_prawa_kolumna') ): ?>

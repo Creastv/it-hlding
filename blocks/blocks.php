@@ -120,6 +120,35 @@ function register_acf_block_types() {
         'keywords'          => array( 'Akordeon' ),
     ));
 
+    acf_register_block_type(array(
+        'name'              => 'kontakt-adres',
+        'title'             => __('Kontakt-adres'),
+        'description'       => __('Kontakt-adres'),
+        'render_template'   => 'blocks/block-kontakt-adres.php',
+        'category'          => 'formatting',
+        'icon'              => 'admin-comments',
+        'keywords'          => array( 'Kontakt adres' ),
+    ));
+
+    acf_register_block_type(array(
+        'name'              => 'kontakt-osoba',
+        'title'             => __('Kontakt-osoba'),
+        'description'       => __('Kontakt-osoba'),
+        'render_template'   => 'blocks/block-kontakt-osoba.php',
+        'category'          => 'formatting',
+        'icon'              => 'admin-comments',
+        'keywords'          => array( 'Kontakt osoba' ),
+    ));
+    acf_register_block_type(array(
+        'name'              => 'zarzad',
+        'title'             => __('Zarząd - osoba'),
+        'description'       => __('Zarząd - osoba'),
+        'render_template'   => 'blocks/block-zarzad-osoba.php',
+        'category'          => 'formatting',
+        'icon'              => 'admin-comments',
+        'keywords'          => array( 'Zarząd osoba' ),
+    ));
+
 }
 
 // Check if function exists and hook into setup.

@@ -105,7 +105,7 @@
       </div>
     </div>
   </footer>
-  <a href="#" class="scrollToTop"><img src="<?php echo get_template_directory_uri(); ?>/src/img/go-to-top.png" alt=""></a>
+  <a href="#" class="scrollToTop"><img src="<?php echo get_template_directory_uri(); ?>/src/img/go-to-top.png" alt="go to top"></a>
   <div class="progressCounter"></div>
      
   <?php wp_footer(); ?>

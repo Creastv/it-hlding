@@ -22,10 +22,10 @@
             @include trans;
             padding: 10px;
             // filter: brightness(0) invert(.5);
-            max-width: 200px;
-            @media #{$xs}{
-                max-width: 80px;
-            }
+            max-width: 270px;
+            // @media #{$xs}{
+            //     max-width: 80px;
+            // }
         }
     }
 }

@@ -169,7 +169,7 @@ a{
     @include trans;
     position: fixed;
     z-index: 9999999999999999;
-    bottom: 10px;
+    bottom: -100px;
     right: 10px;
 }
 
@@ -216,5 +216,3 @@ a{
         margin: 30px 0px;
     }
 }
-.kksr-stars-inactive{}
-.kksr-stars-active{}

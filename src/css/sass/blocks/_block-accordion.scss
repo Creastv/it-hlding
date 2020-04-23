@@ -35,18 +35,18 @@
 
 
 #accordion a:after {
-    font-family: 'FontAwesome';  
-    content: "\f068";
+    content: "";
+    background-image: url(../img/arrow-btn.png);
     position: absolute;
+    width: 32px;
+    height: 22px;
     top: 50%;
     right: 10px;
-    transform: translate(0%, -50%);
+    transform: translate(0%, -50%) rotate(90deg);
 }
 #accordion a.collapsed:after {
-    /* symbol for "collapsed" panels */
-    content: "\f067"; 
     position: absolute;
     top: 50%;
     right: 10px;
-    transform: translate(0%, -50%);
+    transform: translate(0%, -50%) rotate(0deg);
 }
